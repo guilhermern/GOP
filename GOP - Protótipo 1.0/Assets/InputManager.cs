@@ -11,12 +11,23 @@ public class InputManager : MonoBehaviour {
     }
 
     static void setUnselected() {
-        selectedObject.GetComponent<Soldier>().lifeSliderObject.SetActive(false);
+        if (selectedObject != null)
+        {
+            selectedObject.GetComponent<Soldier>().lifeSliderObject.SetActive(false);
+            selectedObject = null;
+        }
     }
 
-    void Update() {
-        if (Input.GetKeyDown(KeyCode.Mouse0)) {
-            
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            setUnselected();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Mouse1))
+        {
+            //movement
         }
     }
     
