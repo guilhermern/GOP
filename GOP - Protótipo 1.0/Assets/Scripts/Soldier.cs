@@ -14,13 +14,16 @@ public class Soldier : MonoBehaviour {
     public int attackBonus = 0;
     public int defense = 0;
     public int defenseBonus = 0;
-    public int velocity = 0;
+    public float velocity = 0;
     public int cost = 0;
 
     //private stuff
     int castleId = -1;
     Slider lifeSlider;
-    
+    bool moveToDestiny = false;
+    Vector2 destination;
+
+
 	// Use this for initialization
 	void Start () {
         lifeSlider = lifeSliderObject.GetComponent<Slider>();
@@ -29,9 +32,13 @@ public class Soldier : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         lifeSlider.value = life;
+        
+        
 	}
 
     void OnMouseUp() {
         InputManager.setSelectedGameObject(gameObject);
     }
+
+
 }
