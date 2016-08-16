@@ -14,31 +14,45 @@ public class Soldier : MonoBehaviour {
     public int attackBonus = 0;
     public int defense = 0;
     public int defenseBonus = 0;
-    public float velocity = 0;
+    public float velocity = 1.5f;
     public int cost = 0;
 
     //private stuff
     int castleId = -1;
     Slider lifeSlider;
-    bool moveToDestiny = false;
-    Vector2 destination;
 
+    bool moveToDestiny = false;
+    Vector3 target;
+
+
+    
 
 	// Use this for initialization
 	void Start () {
         lifeSlider = lifeSliderObject.GetComponent<Slider>();
+        target = transform.position;
 	}
-	
-	// Update is called once per frame
+
+
+
 	void Update () {
         lifeSlider.value = life;
-        
-        
+        moveToDestination();
 	}
 
     void OnMouseUp() {
         InputManager.setSelectedGameObject(gameObject);
     }
 
+    public void setDestiny(Vector3 mPos) {
+        target = Camera.main.ScreenToWorldPoint(mPos);
+        target.z = transform.position.z;
+        moveToDestiny = true;
+    }
+
+    void moveToDestination() {
+        if (moveToDestiny)
+            transform.position = Vector3.MoveTowards(transform.position, target, velocity * Time.deltaTime);
+    }
 
 }
