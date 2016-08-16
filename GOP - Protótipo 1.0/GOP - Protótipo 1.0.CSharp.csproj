@@ -63,11 +63,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\InputManager.cs" />
+    <Compile Include="Assets\Scripts\InputManager.cs" />
     <Compile Include="Assets\Scripts\Soldier.cs" />
-    <Compile Include="Assets\lifeManager.cs" />
-    <Compile Include="Assets\mov.cs" />
-    <Compile Include="Assets\positioning.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Resources\logBalanceamento.txt" />
+    <None Include="Assets\Resources\logInimigoBaixasExercito.txt" />
+    <None Include="Assets\Resources\logInimigoMoedas.txt" />
+    <None Include="Assets\Resources\logInimigoRecursos.txt" />
+    <None Include="Assets\Resources\logJogadorBaixasExercito.txt" />
+    <None Include="Assets\Resources\logJogadorGameOver.txt" />
+    <None Include="Assets\Resources\logJogadorMoedas.txt" />
+    <None Include="Assets\Resources\logJogadorRecursos.txt" />
+    <None Include="Assets\Resources\logJogadordesgarrados.txt" />
+    <None Include="Assets\Resources\logNovaPartida.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>
